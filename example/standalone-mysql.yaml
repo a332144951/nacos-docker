@@ -30,7 +30,7 @@ services:
       - ../env/mysql-common.env
       - ../env/mysql-master.env
     volumes:
-      - ./mysql-master:/var/lib/mysql
+      - mysql-master:/var/lib/mysql
     ports:
       - "3306:3306"
   mysql-slave:
@@ -40,7 +40,7 @@ services:
       - ../env/mysql-common.env
       - ../env/mysql-slave.env
     volumes:
-      - ./mysql-slave:/var/lib/mysql
+      - mysql-slave:/var/lib/mysql
     ports:
       - "3305:3306"
     depends_on:
